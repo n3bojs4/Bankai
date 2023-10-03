@@ -1,6 +1,6 @@
 # Bankai
 
-Simple script for installing exegol on a Debian system (Kali, Ubuntu...).
+Simple script for installing exegol ( https://github.com/ThePorgs/Exegol ) on a Debian system (Kali, Ubuntu...).
 
 Prerequisites :
 
