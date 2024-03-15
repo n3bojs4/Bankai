@@ -7,7 +7,7 @@ read answer
 if [ $answer != "y" ] ; then echo 'aborting install !' ; exit 1 ; fi
 
 rm -f /tmp/exegol-deps.yml
-isDebian=$(uname -a | grep -c -i debian)
+isDebian=$(uname -a | egrep -c -i "debian|kali")
 isPython3=$(python -V | grep -c "Python 3")
 
 
@@ -17,7 +17,7 @@ echo "Let's install Ansible first !"
 
 echo 'deb http://ppa.launchpad.net/ansible/ansible/ubuntu focal main' >/tmp/ansible.list
 sudo mv /tmp/ansible.list /etc/apt/sources.list.d/ansible.list
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367 || wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x93C4A3FD7BB9C367" | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install -y ansible     
 
@@ -90,6 +90,7 @@ echo "\n\n\n"
 exegol install || echo "'exegol install' command failed.
  This may fail if the system does not take into account your user's membership of the docker group.
  In this case, you need to close the current session. You can then use 'exegol install' to complete the installation."
+
 
 
 
