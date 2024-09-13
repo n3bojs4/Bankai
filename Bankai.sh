@@ -33,7 +33,7 @@ echo 'deb http://ppa.launchpad.net/ansible/ansible/ubuntu focal main' >/tmp/ansi
 sudo mv /tmp/ansible.list /etc/apt/sources.list.d/ansible.list
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367 || wget -O- "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x93C4A3FD7BB9C367" | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install -y ansible     
+sudo apt-get install -y ansible python3-pip     
 
 
 
