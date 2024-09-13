@@ -21,8 +21,8 @@ read answer
 if [ $answer != "y" ] ; then echo 'aborting install !' ; exit 1 ; fi
 
 rm -f /tmp/exegol-deps.yml
-isDebian=$(uname -a | egrep -c -i "debian|kali")
-isPython3=$(python -V | grep -c "Python 3")
+isDebian=$(uname -a | egrep -c -i "debian|kali|ubuntu")
+isPython3=$(python3 -V | grep -c "Python 3")
 
 
 if [ $isDebian -lt 1 ] ; then echo "This script only runs on Debian System !" ; exit 1 ; fi
